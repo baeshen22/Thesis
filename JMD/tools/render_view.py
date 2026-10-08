@@ -88,6 +88,39 @@ for look in (v.get('look', 'AgX - Medium High Contrast'), 'Medium High Contrast'
         continue
 sc.view_settings.exposure = v.get('exposure', 0.0)
 sc.render.film_transparent = False
+
+def depth_override(sc, cam_obj, k):
+    """ControlNet-style depth pass: inverse distance (near = white), no lighting, glass opaque."""
+    import bpy
+    m = bpy.data.materials.new('DEPTH_OVERRIDE'); m.use_nodes = True; nt = m.node_tree
+    for n in list(nt.nodes):
+        if n.type != 'OUTPUT_MATERIAL': nt.nodes.remove(n)
+    cd = nt.nodes.new('ShaderNodeCameraData'); dv = nt.nodes.new('ShaderNodeMath'); dv.operation = 'DIVIDE'
+    dv.inputs[0].default_value = k; nt.links.new(cd.outputs['View Distance'], dv.inputs[1])
+    mn = nt.nodes.new('ShaderNodeMath'); mn.operation = 'MINIMUM'; mn.inputs[1].default_value = 1.0
+    nt.links.new(dv.outputs[0], mn.inputs[0])
+    em = nt.nodes.new('ShaderNodeEmission'); nt.links.new(mn.outputs[0], em.inputs['Strength'])
+    nt.links.new(em.outputs[0], nt.nodes['Material Output'].inputs['Surface'])
+    sc.view_layers[0].material_override = m
+    sc.world.node_tree.nodes['Background'].inputs['Strength'].default_value = 0.0
+    for o in bpy.data.objects:
+        if o.type == 'LIGHT': o.hide_render = True
+    for o in bpy.data.objects:   # instancing GN modifiers keep working; nothing else to do
+        pass
+    sc.cycles.samples = 8; sc.cycles.use_denoising = False; sc.cycles.max_bounces = 0
+    try: sc.view_settings.view_transform = 'Raw'
+    except Exception: sc.view_settings.view_transform = 'Standard'
+    try: sc.view_settings.look = 'None'
+    except Exception: pass
+    sc.view_settings.exposure = 0.0
+    sc.render.image_settings.color_mode = 'BW'; sc.render.image_settings.color_depth = '16'
+
+import os
+if os.environ.get('JMD_DEPTH'):
+    _c = sc.camera
+    _look = Vector(VIEWS[VIEW]['look']) if 'VIEWS' in globals() and 'VIEW' in globals() else None
+    _d = (_look - _c.location).length if _look is not None else 12.0
+    depth_override(sc, _c, _d * 0.12)
 r.filepath = OUT
 bpy.ops.render.render(write_still=True)
 print('wrote', OUT)

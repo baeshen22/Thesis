@@ -11,6 +11,7 @@ Concept deck and visualisation package for presenting Jeddah Motor District (JMD
 | **C** | Visual Design Bible | `docs/02_Visual_Design_Bible.md` |
 | **D** | Slide narrative and presenter notes | `docs/03_Slide_Narrative_and_Presenter_Notes.md` |
 | **E** | Assumptions and verification register | `docs/04_Assumptions_and_Verification_Register.md` |
+| | AI photoreal enhancement kit (depth maps + prompts) | `docs/05_AI_Enhancement_Kit.md`, `renders/depth/` |
 | | Source reference matrix (internal, Phase 1) | `docs/01_Source_Reference_Matrix.md` |
 | | Reproducible production pipeline | `tools/` |
 
