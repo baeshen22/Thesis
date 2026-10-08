@@ -61,7 +61,7 @@ for src, dst in (('int_arena_expo', 'S09a_expo.jpg'), ('int_arena_theatre', 'S09
     except FileNotFoundError:
         im, _ = load(src.replace('int_', 'i_'))
     save(im, dst)
-im, _ = load('vision_aerial'); im = crop_to(im, AR, 0.55); save(grad(im, 'top', 0.7, 0.45), 'S17_vision.jpg')
+im, _ = load('vision_aerial'); im = crop_to(im, AR, 0.55); save(grad(grad(im, 'top', 0.55, 0.35), 'left', 0.6, 0.4), 'S17_vision.jpg')
 try:
     im, _ = load('frontage_dusk')
 except FileNotFoundError:

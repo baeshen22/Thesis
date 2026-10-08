@@ -1,0 +1,23 @@
+{
+ "hero_aerial": "JMD_R01_District_Hero_Aerial_GoldenHour",
+ "dusk_aerial": "JMD_R02_District_Aerial_Dusk",
+ "masterplan": "JMD_R03_Masterplan_TopView",
+ "arrival": "JMD_R04_Arrival_Frontage_Road",
+ "showroom_street": "JMD_R05a_Showroom_Frontage_StreetLevel",
+ "showroom_blvd": "JMD_R05b_Showroom_Boulevard_Drone",
+ "facade_a": "JMD_R06a_Showroom_Facade_Louvre_Minimal",
+ "facade_b": "JMD_R06b_Showroom_Facade_Frame",
+ "facade_c": "JMD_R06c_Showroom_Facade_StoneGlass",
+ "arcade": "JMD_R07_Lifestyle_Arcade_StreetLevel",
+ "arena_hero": "JMD_R08_Grand_Arena_Exterior",
+ "int_arena_expo": "JMD_R09a_Arena_Interior_Exhibition",
+ "int_arena_theatre": "JMD_R09b_Arena_Interior_Theatre180",
+ "offroad": "JMD_R10_OffRoad_Experience",
+ "int_museum": "JMD_R11_WallOfFame_Museum_Interior",
+ "int_simulator": "JMD_R12_Simulator_Hall_Interior",
+ "club_ext": "JMD_R13a_Collectors_Club_Exterior_Dusk",
+ "int_club_lounge": "JMD_R13b_Collectors_Club_Lounge",
+ "launch_plaza": "JMD_R14_Launch_Plaza",
+ "vision_aerial": "JMD_R17_District_Vision_Aerial",
+ "frontage_dusk": "JMD_R18_Showroom_Frontage_Dusk"
+}

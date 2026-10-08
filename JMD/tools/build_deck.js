@@ -410,14 +410,14 @@ SOURCE: Images reproduced from JMD Concept 1 pp.24–25 (satellite imagery as su
 section('Conclusion');
 s = slide('JMD Hero');
 s.background = { path: img('S17_vision.jpg') };
-T(s, 'OVERALL DEVELOPMENT VISION', { x: 0.7, y: 0.55, w: 7, h: 0.3, fontSize: 12, bold: true, color: C.accent4, charSpacing: 3, objectName: 'kicker' });
-s.addText('A distinctive automotive destination for Jeddah', { isTextBox: true, x: 0.7, y: 0.85, w: 7.4, h: 1.3, fontFace: THEME.headFontFace, fontSize: 32, color: C.background1, margin: 0, objectName: 'title' });
-s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x: 8.55, y: 0.5, w: 4.3, h: 6.3, rectRadius: 0.06, fill: { color: HEX.dk1, transparency: 12 }, line: { color: HEX.dk1 }, objectName: 'coordination panel' });
-T(s, 'MATTERS FOR MUNICIPAL COORDINATION', { x: 8.8, y: 0.75, w: 3.9, h: 0.5, fontSize: 11, bold: true, color: C.accent1, charSpacing: 2 });
+T(s, 'OVERALL DEVELOPMENT VISION', { x: 5.3, y: 0.55, w: 7, h: 0.3, fontSize: 12, bold: true, color: C.accent4, charSpacing: 3, objectName: 'kicker' });
+s.addText('A distinctive automotive destination for Jeddah', { isTextBox: true, x: 5.3, y: 0.85, w: 7.5, h: 1.3, fontFace: THEME.headFontFace, fontSize: 32, color: C.background1, margin: 0, objectName: 'title' });
+s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x: 0.5, y: 0.5, w: 4.3, h: 6.3, rectRadius: 0.06, fill: { color: HEX.dk1, transparency: 12 }, line: { color: HEX.dk1 }, objectName: 'coordination panel' });
+T(s, 'MATTERS FOR MUNICIPAL COORDINATION', { x: 0.75, y: 0.75, w: 3.9, h: 0.5, fontSize: 11, bold: true, color: C.accent1, charSpacing: 2 });
 const coord = ['Site selection, boundary and land use', 'Access points and traffic impact', 'Parking provision and event-day management', 'Public realm, shade and pedestrian safety', 'Utilities and infrastructure interfaces', 'Off-road dust, noise and safety', 'Programme phasing'];
-coord.forEach((c, i) => { numDot(s, 9.0, 1.55 + i * 0.66, i + 1, HEX.accent1, 0.28, 10); T(s, c, { x: 9.3, y: 1.42 + i * 0.66, w: 3.4, h: 0.6, fontSize: 14 }); });
-T(s, 'Discussion topics, not completed assessments.', { x: 8.8, y: 6.2, w: 3.9, h: 0.4, fontSize: 11, color: C.background2 });
-tag(s, NEW, 0.7, 7.05, 3.2);
+coord.forEach((c, i) => { numDot(s, 0.95, 1.55 + i * 0.66, i + 1, HEX.accent1, 0.28, 10); T(s, c, { x: 1.25, y: 1.42 + i * 0.66, w: 3.4, h: 0.6, fontSize: 14 }); });
+T(s, 'Discussion topics, not completed assessments.', { x: 0.75, y: 6.2, w: 3.9, h: 0.4, fontSize: 11, color: C.background2 });
+tag(s, NEW, 9.6, 7.05, 3.2);
 s.addNotes(`PURPOSE: Bring the district back together and name what needs coordination next.
 TALKING POINTS:
 - One coherent district: commercial frontage, public attractions, events, operations at the back.
