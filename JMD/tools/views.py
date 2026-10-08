@@ -27,5 +27,6 @@ VIEWS = {
     'facade_c':      V(GOLD, cam=arcpt(2.95, 4, 5.5), look=arcpt(2.95, -40, 6), lens=32, sun=(292, 18), hide=['palms_', 'shrubs_']),
     'facade_d':      V(GOLD, cam=arcpt(3.015, 4, 5.5), look=arcpt(3.015, -40, 6), lens=32, sun=(292, 18), hide=['palms_', 'shrubs_']),
     'frontage_dusk': V(DUSK, cam=arcpt(2.985, 50, 14), look=(-300, -150, 7), lens=28, interior=3.0, clear_cars=12),
+    'showroom_street': V(GOLD, cam=arcpt(2.80, -8.5, 2.2), look=arcpt(2.735, -23, 4.2), lens=24, sun=(292, 16), clear_cars=11, clear_people=8),
     'launch_plaza':  V(GOLD, cam=(-345, -290, 24), look=(-265, -195, 4), lens=28, led=3.0),
 }

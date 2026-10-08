@@ -85,7 +85,7 @@ _n.links.new(_mx.outputs['Result'], _n.nodes['Principled BSDF'].inputs['Base Col
 MAT['door'] = mat('Roller door', (0.30, 0.31, 0.32), 0.5, 0.6)
 MAT['concrete'] = mat('Concrete', (0.58, 0.56, 0.53), 0.75)
 MAT['fabric'] = mat('Shade fabric', (0.92, 0.91, 0.88), 0.8, **{'Transmission Weight': 0.25, 'Thin Wall': True})
-MAT['water'] = mat('Water', (0.10, 0.17, 0.17), 0.04, **{'Transmission Weight': 0.0})
+MAT['water'] = mat('Water', (0.09, 0.075, 0.05), 0.06, **{'Transmission Weight': 0.0})
 MAT['rock'] = mat('Rock', (0.30, 0.22, 0.155), 0.85); add_noise_bump(MAT['rock'], 2.0, 0.6)
 MAT['mech'] = mat('Rooftop plant', (0.55, 0.56, 0.56), 0.5, 0.4)
 MAT['pole'] = mat('Pole', (0.35, 0.36, 0.37), 0.4, 0.8)
@@ -703,8 +703,9 @@ def hfun(x, y):
             if d > -4: h = max(h, (2.2 + 1.8 * math.sin(x * 0.19) * math.cos(y * 0.15)) * min(1, (d + 4) / 8))
         elif k == 193:                                              # side-slope / camber
             if d > -3: h = max(h, min(3.2, (d + 3) * 0.5))
-        elif k == 202:                                              # water crossing
+        elif k == 202:                                              # water crossing in a mud basin
             if d > 0: h = min(h, -min(0.9, d * 0.25))
+            elif d > -9: h = min(h, -0.25 * (1 + d / 9))
         elif k == 199:                                              # rock crawl base
             if d > -3: h = max(h, 1.2 * min(1, (d + 3) / 6))
     return h

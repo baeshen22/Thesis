@@ -62,7 +62,7 @@ def dashed_arc(c, r, a0, a1, fill, w=0.15, dash=3.0, gap=9.0):
 
 ASPH = (74, 74, 76); ASPH2 = (66, 66, 68); PARK = (82, 81, 80); WHITE = (228, 226, 220)
 PAVE = (200, 190, 172); PAVE2 = (184, 173, 155); LAND = (108, 116, 70); KERB = (190, 186, 178)
-DIRT = (180, 138, 92); DIRT2 = (160, 120, 80); WATER = (70, 98, 102); YEL = (214, 178, 70)
+DIRT = (180, 138, 92); DIRT2 = (160, 120, 80); WATER = (78, 74, 58); YEL = (214, 178, 70)
 
 # ------------------------------------------------ off-site roads (illustrative cross-sections)
 CNW, RNW = M['C_NW'], M['R_NW']
@@ -201,8 +201,12 @@ poly(list(inner.exterior.coords), DIRT)
 for P in by('offroad_field'):
     poly(list(P.exterior.coords), (186, 146, 100))
 obs = sorted([z for z in Z if z['cls'] == 'offroad_obstacle'], key=lambda z: z['area'])
+MUD = (92, 70, 50); MUD2 = (74, 56, 40)
 for z in obs:
     P = Polygon(z['poly'])
+    if z['id'] == 202:   # mud apron around the water crossing (voice note: mud + water experiences)
+        poly(list(P.buffer(9).exterior.coords), MUD)
+        poly(list(P.buffer(4).exterior.coords), MUD2)
     poly(z['poly'], WATER if z['id'] == 202 else DIRT2)
 # kerbs on the loop: red/white blocks on both edges
 for edge in (outer.buffer(-0.6).exterior, inner.buffer(0.6).exterior):

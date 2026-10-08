@@ -49,7 +49,7 @@ im, _ = load('hero_aerial'); im = crop_to(im, AR, 0.62); save(grad(grad(im, 'lef
 im, _ = load('dusk_aerial'); im = crop_to(im, AR, 0.5); save(grad(grad(im, 'top', 0.6, 0.35), 'bottom', 0.95, 0.5), 'S02_vision.jpg')
 im, _ = load('masterplan'); save(im, 'S03_masterplan.jpg', 2400)
 dim = ImageEnhance.Brightness(ImageEnhance.Color(im).enhance(0.35)).enhance(0.55); save(dim, 'S15_plan_dim.jpg', 2400)
-for src, dst in (('arrival', 'S04_arrival.jpg'), ('showroom_blvd', 'S05_showroom_blvd.jpg'), ('facade_c', 'S05b_facade.jpg'),
+for src, dst in (('arrival', 'S04_arrival.jpg'), ('showroom_blvd', 'S05_showroom_blvd.jpg'), ('showroom_street', 'S05_showroom_street.jpg'),
                  ('facade_a', 'S06a_facade.jpg'), ('facade_b', 'S06b_facade.jpg'), ('facade_c', 'S06c_facade.jpg'),
                  ('arcade', 'S07_arcade.jpg'), ('arena_hero', 'S08_arena.jpg'), ('offroad', 'S10_offroad.jpg'),
                  ('club_ext', 'S13a_club_ext.jpg'), ('launch_plaza', 'S14_plaza.jpg')):

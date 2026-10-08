@@ -181,9 +181,9 @@ SOURCE: Layout = DWG. Road cross-section, context massing = illustrative assumpt
 section('Destinations');
 s = slide('JMD Content');
 heads(s, 'AUTOMOTIVE SHOWROOM DISTRICT', 'A coordinated frontage of brand showrooms');
-pic(s, 'S05_showroom_blvd.jpg', 0.5, 1.4, 8.9, 5.0, 'Showroom boulevard');
+pic(s, 'S05_showroom_street.jpg', 0.5, 1.4, 8.9, 5.0, 'Showroom frontage at street level');
 tag(s, NEW, 0.5, 6.14, 3.2);
-pic(s, 'S05b_facade.jpg', 9.7, 1.4, 3.15, 1.77, 'Showroom frontage detail');
+pic(s, 'S05_showroom_blvd.jpg', 9.7, 1.4, 3.15, 1.77, 'Showroom boulevard from above');
 block(s, 9.7, 3.4, 3.15, 'One frontage, many brands', '52 showroom units in standard, premium and flagship sizes, joined by one plinth, roof line and shading canopy.', { h: 1.45, fs: 14 });
 block(s, 9.7, 5.1, 3.15, 'Customer parking at the door', 'Each showroom faces its own parking bay and the frontage service drive.', { h: 1.0, fs: 14 });
 s.addNotes(`PURPOSE: Show the street-level character of the showroom frontage.
@@ -191,7 +191,7 @@ TALKING POINTS:
 - Unit sizes and arrangement follow the DWG: 23 standard (~240 m²), 21 premium (~350–370 m²), 7 flagship (~390–460 m²), 1 flagship-plus (540 m²).
 - Heights 9–14 m and the façade kit are illustrative design development.
 - Brand bands are deliberately left blank: no brand commitments are implied.
-SOURCE: DWG footprints; design language from JMD Concept 1 pp.3–6 and 31–33; render new.`);
+SOURCE: DWG footprints; design language from JMD Concept 1 pp.3–6 and 31–33; voice notes 1–2 stress the street-level feeling of the boulevard; render new.`);
 
 // ================================================================== 06 SHOWROOM IDENTITIES
 s = slide('JMD Content');
@@ -211,6 +211,7 @@ T(s, [{ text: 'SHARED BY EVERY SHOWROOM   ', options: { bold: true, color: HEX.a
 tag(s, NEW + ' · PALMS OMITTED FOR CLARITY', 0.5, 6.5, 5.2);
 s.addNotes(`PURPOSE: Answer "will it look uniform?" — brands get identity, the district stays coherent.
 TALKING POINTS:
+- Voice-note intent: showrooms should have different possible looks rather than identical, typical boxes.
 - Five façade options from the concept (louvre, minimal, frame, stone & glass, angled canopy) are applied as a kit of parts.
 - Shared plinth, roof line, bronze blades and the blank brand band keep the frontage coherent.
 SOURCE: Options = JMD Concept 1 p.5; application = new design development; renders new.`);
@@ -220,14 +221,14 @@ s = slide('JMD Content');
 heads(s, 'COMMERCIAL AND LIFESTYLE BOULEVARD', 'Shaded retail facing the showroom row');
 pic(s, 'S07_arcade.jpg', 4.45, 1.4, 8.4, 4.725, 'Lifestyle arcade');
 tag(s, NEW, 4.45, 1.4 + 4.725 - 0.26, 3.2);
-block(s, 0.5, 1.45, 3.6, '29 retail units', 'Accessories, brand lifestyle stores, cafés and food & beverage complement the showrooms.', { h: 1.1 });
+block(s, 0.5, 1.45, 3.6, 'Behind the showrooms', '29 units for automotive accessories, brand lifestyle and design stores, cafés and food & beverage.', { h: 1.1 });
 block(s, 0.5, 2.95, 3.6, 'Continuous shade', 'A 5.5 m deep arcade on slender bronze columns provides shaded walking along the whole row.', { h: 1.1 });
 block(s, 0.5, 4.45, 3.6, 'Open to all visitors', 'People can visit without buying a car, which keeps the district active through the day and evening.', { h: 1.1 });
 discuss(s, 0.5, 6.3, 12.35, 'Pedestrian crossings between the showroom and retail rows, shade standards and F&B outdoor seating.');
 s.addNotes(`PURPOSE: Show the public, pedestrian side of the district.
 TALKING POINTS:
 - The retail row is drawn as 29 units facing the showroom row across the internal drive.
-- Tenant mix is indicative; arcade and shade are design proposals.
+- Tenant mix is indicative (voice note 2 examples: accessories shops, a brand design store, cafés); arcade and shade are design proposals.
 SOURCE: DWG footprints (labelled "commercial shop"); programme from JMD Concept 1 p.13 and earlier masterplan zone 7; render new.`);
 
 // ================================================================== 08 ARENA
@@ -277,10 +278,10 @@ SOURCE: Modes = JMD Concept 1 pp.17–23; hall geometry = DWG; interior renders 
 
 // ================================================================== 10 OFF-ROAD
 s = slide('JMD Content');
-heads(s, 'OFF-ROAD DRIVING EXPERIENCE', 'Test real capability on real terrain');
+heads(s, 'OFF-ROAD DRIVING EXPERIENCE', 'Real off-road terrain, inside the city');
 pic(s, 'S10_offroad.jpg', 0.5, 1.4, 8.4, 4.725, 'Off-road experience');
 tag(s, NEW, 0.5, 1.4 + 4.725 - 0.26, 3.2);
-const terr = ['Hill climb and descent mounds', 'Dune field', 'Water crossing', 'Rock crawl', 'Axle-twister ramps', 'Side-slope section', 'Kerbed test-drive loop'];
+const terr = ['Hill climb and descent', 'Mud and water crossing', 'Dune field', 'Rock crawl', 'Axle-twister ramps', 'Side-slope section', 'Kerbed test-drive loop'];
 T(s, 'EXPERIENCE ZONES (AS DRAWN)', { x: 9.25, y: 1.45, w: 3.6, h: 0.28, fontSize: 11, bold: true, color: C.accent1, charSpacing: 2 });
 terr.forEach((t, i) => { numDot(s, 9.4, 2.0 + i * 0.47, i + 1, HEX.accent4, 0.28, 10); T(s, t, { x: 9.7, y: 1.87 + i * 0.47, w: 3.2, h: 0.3, fontSize: 14 }); });
 T(s, 'Registration pavilion, drop-off, test-car and guest parking sit at the south-east entrance.', { x: 9.25, y: 5.3, w: 3.6, h: 0.8, fontSize: 12, color: C.background2 });
@@ -288,35 +289,36 @@ discuss(s, 0.5, 6.3, 12.35, 'Safety separation, dust and noise management, and o
 s.addNotes(`PURPOSE: Explain the off-road experience and where it sits.
 TALKING POINTS:
 - The drawing defines the off-road zone (≈5.4 ha incl. loop) with 7 obstacle areas inside a test-drive loop.
-- Obstacle types and heights shown are illustrative (mounds ~10 m, water crossing, rocks, ramps, side-slope).
+- Voice-note intent: simulate a real off-road experience within an urban setting — five or six experiences such as mud, water, and driving up and down hills.
+- Obstacle types and heights shown are illustrative (mounds ~10 m, mud/water crossing, rocks, ramps, side-slope).
 - Earlier masterplan quoted a 2.5 km loop; the current drawing's loop is shorter — length to be confirmed.
-SOURCE: DWG zones; JMD Concept 1 p.7 for intent; render new.`);
+SOURCE: DWG zones; JMD Concept 1 p.7 and project voice note 2 for intent; render new.`);
 
 // ================================================================== 11 MUSEUM
 s = slide('JMD Content');
 heads(s, 'WALL OF FAME — AUTOMOTIVE HERITAGE MUSEUM', 'The stories behind the brands');
 pic(s, 'S11_museum.jpg', 0.5, 1.4, 8.4, 4.725, 'Wall of Fame museum interior');
 tag(s, NEW, 0.5, 1.4 + 4.725 - 0.26, 3.2);
-block(s, 9.25, 1.45, 3.6, 'Heritage, not sales', 'Celebrates automotive companies, their founders and milestones through collections and storytelling.', { h: 1.2 });
+block(s, 9.25, 1.45, 3.6, 'Heritage, not sales', 'A museum path through the corporate achievements of automotive companies: founders, milestones and collected cars.', { h: 1.2 });
 block(s, 9.25, 2.95, 3.6, 'Curated content', 'Milestone panels and display cars are shown blank here. Content is to be curated with the brands.', { h: 1.2 });
 block(s, 9.25, 4.45, 3.6, 'Location', '[To be confirmed: it is not located on the current drawing. Options include the arena complex or next to the Collectors’ Club.]', { h: 1.4, fs: 13 });
 s.addNotes(`PURPOSE: Introduce the museum as a heritage attraction (explicitly not a showroom).
 TALKING POINTS:
-- Focus: corporate automotive heritage, founders, milestones.
+- Focus (per voice note 2): a museum of the car companies' achievements as corporations — a visitor path past collected cars, founders and milestones. Explicitly not a showroom or sales space.
 - Location and building form are open: the earlier concept shows two different exterior designs and the current drawing does not include the museum.
-SOURCE: Intent = JMD Concept 1 pp.8–10; interior render new and illustrative; location unresolved (register item).`);
+SOURCE: Intent = JMD Concept 1 pp.8–10 and voice note 2; interior render new and illustrative; location unresolved (register item).`);
 
 // ================================================================== 12 SIMULATOR
 s = slide('JMD Content');
-heads(s, 'AUTOMOTIVE SIMULATOR HALL', 'Drive any category of vehicle in a day');
+heads(s, 'AUTOMOTIVE SIMULATOR HALL', 'Experience driving many different cars');
 pic(s, 'S12_simulator.jpg', 4.45, 1.4, 8.4, 4.725, 'Simulator hall interior');
 tag(s, NEW, 4.45, 1.4 + 4.725 - 0.26, 3.2);
-block(s, 0.5, 1.45, 3.6, 'For every visitor', 'Motion simulators let visitors try different vehicle categories and brands without going on the road.', { h: 1.2 });
+block(s, 0.5, 1.45, 3.6, 'For every visitor', 'Multiple simulators let visitors experience driving specific cars, from a supercar to an off-roader or a city car.', { h: 1.2 });
 block(s, 0.5, 2.95, 3.6, 'Competitive & social', 'Rows of rigs, a feature 360° pod and a lounge support sessions, leagues and corporate events.', { h: 1.2 });
 block(s, 0.5, 4.45, 3.6, 'Location', '[To be confirmed: it is not located on the current drawing.]', { h: 1.0 });
 s.addNotes(`PURPOSE: Show an all-weather, all-ages attraction.
 TALKING POINTS:
-- Interactive simulators for different vehicle categories and brands.
+- Per voice note 2: multiple simulators, each giving the experience of driving a specific car (examples given ranged from supercars to an off-roader and a city car).
 - Screens shown with neutral imagery; brand content would be licensed.
 SOURCE: Intent = JMD Concept 1 pp.11–12; render new and illustrative; location unresolved.`);
 
@@ -327,11 +329,12 @@ pic(s, 'S13a_club_ext.jpg', 0.5, 1.4, 6.05, 3.4, 'Collectors club exterior');
 pic(s, 'S13b_club_lounge.jpg', 6.8, 1.4, 6.05, 3.4, 'Collectors club lounge');
 tag(s, 'EXTERIOR AT DUSK · ILLUSTRATIVE', 0.5, 4.54, 3.0); tag(s, 'GALLERY LOUNGE · ILLUSTRATIVE', 6.8, 4.54, 3.0);
 block(s, 0.5, 5.0, 3.9, 'Three levels', 'Glazed display gallery at ground level, members’ lounges above and a shaded roof terrace.', { h: 1.0 });
-block(s, 4.72, 5.0, 3.9, 'Collectors first', 'Vehicle storage, private gatherings and collector events, with a dedicated valet drop-off.', { h: 1.0 });
+block(s, 4.72, 5.0, 3.9, 'Store or simply meet', 'Members can store their cars or come to meet in the lounge and café, with valet drop-off.', { h: 1.0 });
 block(s, 8.95, 5.0, 3.9, 'At the hinge', 'Sits between the arena and the off-road field, close to events but discreet.', { h: 1.0 });
 s.addNotes(`PURPOSE: Present the exclusive club and its place in the district.
 TALKING POINTS:
 - Footprint as drawn: a 30 x 117 m bar (≈3,500 m²) between the arena and off-road zone.
+- Per voice note 2: a club for collectors of luxury and collectible cars — members can store their cars or simply come to spend time (lounge, café).
 - Three levels per the earlier concept; storage location (basement) to be confirmed.
 SOURCE: DWG footprint; intent from JMD Concept 1 pp.14–15 and earlier masterplan zone 3; renders new.`);
 
