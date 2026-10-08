@@ -19,7 +19,7 @@ VIEWS = {
     'showroom_blvd': V(GOLD, cam=arcpt(2.70, 34, 26), look=arcpt(2.585, -28, 5), lens=30, sun=(292, 14)),
     'arcade':        V(GOLD, cam=(-217.5, 154.7, 1.6), look=(-246.4, 106.7, 2.4), lens=20, sun=(275, 20), clear_people=7, clear_cars=9),
     'arena_hero':    V(GOLD, cam=(-430, -330, 55), look=(-230, -150, 12), lens=30),
-    'offroad':       V(GOLD, cam=(-140, 40, 48), look=(40, 170, 0), lens=28, sun=(212, 22)),
+    'offroad':       V(GOLD, cam=(140, 76, 25), look=(30, 172, 2), lens=26, sun=(240, 20)),
     'club_ext':      V(DUSK, cam=(-28, -86, 14), look=(-132, -30, 8), lens=30),
     'vision_aerial': V(GOLD, cam=arcpt(2.40, 230, 290), look=(-110, -60, 0), lens=28, sun=(300, 13)),
     'facade_a':      V(GOLD, cam=arcpt(2.40, 4, 5.5), look=arcpt(2.40, -40, 6), lens=32, sun=(292, 18), hide=['palms_', 'shrubs_']),
